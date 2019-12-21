@@ -1,0 +1,25 @@
+{
+  "name": "cucumber-pretty-junit",
+  "version": "1.0.0",
+  "description": "To create a custom formatter for cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js --require tests/specs/features/step_definitions/stepdefs.js tests/specs/features/**/*.feature"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BriandFMarie/cucumber-pretty-junit.git"
+  },
+  "author": "Marie Briand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BriandFMarie/cucumber-pretty-junit/issues"
+  },
+  "homepage": "https://github.com/BriandFMarie/cucumber-pretty-junit#readme",
+  "dependencies": {
+    "cucumber": "~6.0.5"
+  },
+  "devDependencies": {
+    "chai": "~4.2.0"
+  }
+}
