@@ -88,9 +88,9 @@ class CustomFormatter extends Formatter {
             });
 
                if(featureData.keyword === 'Feature' && featureData.name && !featureData.description) {
-                   return console.log(featureData.keyword, "\n", featureData.name, "\n", "Scenario: ", scenarioData.name);
+                   return console.log("\n", featureData.keyword, "\n", featureData.name, "\n", "Scenario: ", scenarioData.name);
                }  else if (featureData.keyword === 'Feature' && featureData.name && featureData.description) {
-                   return console.log(featureData.keyword, "\n", featureData.name, "\n", featureData.description, "\n", "Scenario: ", scenarioData.name)
+                   return console.log("\n", featureData.keyword, "\n", featureData.name, "\n", featureData.description, "\n", "Scenario: ", scenarioData.name)
                } else {
                    //Do nothing
                }
@@ -191,44 +191,42 @@ class CustomFormatter extends Formatter {
             });
 
             // To get just scenario with uri and to get gherkinDocument with some data
-            const features = () =>  {
-                Object.keys(groupedTestCaseAttempts).map(uri => {
+            const features = Object.keys(groupedTestCaseAttempts).map(uri => {
                     gherkinDocument = this.eventDataCollector.gherkinDocumentMap[uri];
                     featureData = helpers.getFeatureData(gherkinDocument.feature, uri);
                     stepLineToKeywordMap = getStepLineToKeywordMap(gherkinDocument);
                     scenarioLineToDescriptionMap = getScenarioLineToDescriptionMap(gherkinDocument);
-                });
 
-                // To get just scenario data and to get pickle with some data
-                featureData.elements = Object.values(groupedTestCaseAttempts).map(testCaseAttempts => {
-                    return testCaseAttempts.map(testCaseAttempt => {
-                        const {pickle} = testCaseAttempt,
-                            scenarioData = helpers.getScenarioData({
-                                featureId: featureData.id,
-                                pickle,
-                                scenarioLineToDescriptionMap,
-                                getScenarioDescription
-                            }),
+                    // To get just scenario data and to get pickle with some data
+                    featureData.elements = Object.values(groupedTestCaseAttempts).map(testCaseAttempts => {
+                        return testCaseAttempts.map(testCaseAttempt => {
+                            const {pickle} = testCaseAttempt,
+                                scenarioData = helpers.getScenarioData({
+                                    featureId: featureData.id,
+                                    pickle,
+                                    scenarioLineToDescriptionMap,
+                                    getScenarioDescription
+                                }),
 
-                            stepLineToPickledStepMap = getStepLineToPickledStepMap(pickle);
+                                stepLineToPickledStepMap = getStepLineToPickledStepMap(pickle);
 
-                        let isBeforeHook = true;
-                        scenarioData.steps = testCaseAttempt.testCase.steps.map((testStep, index) => {
-                            isBeforeHook = isBeforeHook && !testStep.sourceLocation;
-                            return this.getStepData({
-                                isBeforeHook,
-                                stepLineToKeywordMap,
-                                stepLineToPickledStepMap,
-                                testStep,
-                                testStepAttachments: testCaseAttempt.stepAttachments[index],
-                                testStepResult: testCaseAttempt.stepResults[index]
+                            let isBeforeHook = true;
+                            scenarioData.steps = testCaseAttempt.testCase.steps.map((testStep, index) => {
+                                isBeforeHook = isBeforeHook && !testStep.sourceLocation;
+                                return this.getStepData({
+                                    isBeforeHook,
+                                    stepLineToKeywordMap,
+                                    stepLineToPickledStepMap,
+                                    testStep,
+                                    testStepAttachments: testCaseAttempt.stepAttachments[index],
+                                    testStepResult: testCaseAttempt.stepResults[index]
+                                });
                             });
+                            return scenarioData;
                         });
-                        return scenarioData;
                     });
+                    return featureData;
                 });
-                return featureData;
-            };
 
             // to get current time in milliseconds
             this.timeTestRunFinished = Math.trunc(Date.now());
@@ -239,10 +237,10 @@ class CustomFormatter extends Formatter {
             // To show time spent for running tests
             console.log(helpers.resultInMilliSeconds(this.timeSpentToRunTests));
 
-            //todo: add time finished in terminal and add it junit reporter in a file if it exists (if not exists, to create file)
-            //todo: write in console, number of tests and scenarios with passed, failed skip etc...
+            //todo: file if it exists (if not exists, to create file)
+            //todo: to override millisecond already write by cucumber and to remove dot in beginning of Given
 
-            // return this._toXML.generateXML(features())
+            return this.log(this._toXML.generateXML(features));
         });
     }
 
@@ -306,7 +304,6 @@ class CustomFormatter extends Formatter {
                         data.result.error_message = format(exception);
                     }
                     break;
-
                 default:
                     break;
             }

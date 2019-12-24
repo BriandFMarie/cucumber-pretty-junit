@@ -55,7 +55,7 @@ getScenarioData = ({ pickle, scenarioLineToDescriptionMap, getScenarioDescriptio
 // To put in format DataTable
 formatDataTable = (dataTable) => {
     return {
-        rows: dataTable.rows.map(row=>({ cells: _.map(row.cells, 'value') }))
+        rows: dataTable.rows.map(row => ({ cells: _.map(row.cells, 'value') }))
     };
 };
 
