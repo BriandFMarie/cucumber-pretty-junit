@@ -225,7 +225,7 @@ class CustomFormatter extends Formatter {
                     });
                     return featureData;
                 });
-            //todo: to override milliseconds already write by cucumber and to remove dot in beginning of Given
+            //todo: to remove dot in beginning of Given and duplicate given
 
             return this.log(this._toXML.generateXML(features));
         });
