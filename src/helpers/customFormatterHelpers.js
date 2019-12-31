@@ -1,17 +1,3 @@
-const clc = require('cli-color');
-
-// Function to change color of result for time spent for running tests
-resultInMilliSeconds = (time) => {
-    if (time >= 6000) {
-        return clc.red(time + "ms");
-    } else if (time >= 2500 && time <= 6000) {
-        return clc.yellow(time + "ms");
-    } else {
-        return clc.green(time + "ms");
-    }
-
-};
-
 // Function to get all data necessary in Feature
 getFeatureData = (feature, uri) => {
     return {
@@ -78,4 +64,4 @@ formatStepArguments = (stepArguments, buildStepArgumentIterator) => {
     })
 };
 
-module.exports = { resultInMilliSeconds, getFeatureData, getTags, getScenarioData, formatDataTable, formatDocString, formatStepArguments };
+module.exports = { getFeatureData, getTags, getScenarioData, formatDataTable, formatDocString, formatStepArguments };

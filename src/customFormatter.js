@@ -10,7 +10,6 @@ const { Formatter, SummaryFormatter, formatterHelpers, Status } = require('cucum
 
 
 //TODO: summary result for each step if it fails, passed, ambigous or skip...
-//TODO: XML reporter
 //TODO: Refacto
 //TODO: Tests ??
 
@@ -86,7 +85,6 @@ class CustomFormatter extends Formatter {
                     });
                 });
             });
-
                if(featureData.keyword === 'Feature' && featureData.name && !featureData.description) {
                    return console.log("\n", featureData.keyword, "\n", featureData.name, "\n", "Scenario: ", scenarioData.name);
                }  else if (featureData.keyword === 'Feature' && featureData.name && featureData.description) {
@@ -227,18 +225,7 @@ class CustomFormatter extends Formatter {
                     });
                     return featureData;
                 });
-
-            // to get current time in milliseconds
-            this.timeTestRunFinished = Math.trunc(Date.now());
-
-            // Time spent to run tests
-            this.timeSpentToRunTests = Math.trunc(this.timeTestRunFinished - this.timeTestRunSarted);
-
-            // To show time spent for running tests
-            console.log(helpers.resultInMilliSeconds(this.timeSpentToRunTests));
-
-            //todo: file if it exists (if not exists, to create file)
-            //todo: to override millisecond already write by cucumber and to remove dot in beginning of Given
+            //todo: to override milliseconds already write by cucumber and to remove dot in beginning of Given
 
             return this.log(this._toXML.generateXML(features));
         });
