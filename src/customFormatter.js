@@ -1,4 +1,4 @@
-const { Formatter, SummaryFormatter, formatterHelpers, Status } = require('cucumber'),
+const { Formatter, formatterHelpers, Status } = require('cucumber'),
     { GherkinDocumentParser, PickleParser, formatLocation} = formatterHelpers,
     { getStepLineToKeywordMap, getScenarioLineToDescriptionMap } = GherkinDocumentParser,
     { getScenarioDescription, getStepLineToPickledStepMap, getStepKeyword } = PickleParser,
@@ -7,6 +7,7 @@ const { Formatter, SummaryFormatter, formatterHelpers, Status } = require('cucum
     toXMl = require('./xmlGenerator'),
     helpers = require('./helpers/customFormatterHelpers'),
     clc = require('cli-color');
+
 
 
 //TODO: summary result for each step if it fails, passed, ambigous or skip...
@@ -156,9 +157,9 @@ class CustomFormatter extends Formatter {
                         return console.log(clc.green("✓", step.keyword + step.name));
                     case 'skipped':
                         return console.log(clc.blue("-", step.keyword + step.name));
-                    case 'failed' || 'undefined':
+                    case 'failed' || 'ambiguous':
                         return console.log(clc.red('X', step.keyword + step.name));
-                    case 'ambiguous':
+                    case 'undefined':
                         return console.log(clc.yellow('?', step.keyword + step.name));
                     default:
                         break;
