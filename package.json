@@ -4,7 +4,7 @@
   "description": "To create a custom formatter for cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js --format ./src/customFormatter.js:toto2.xml --require tests/specs/features/step_definitions/stepdefs.js tests/specs/features/**/*.feature"
+    "test": "./node_modules/.bin/cucumber-js --format ./src/customFormatter.js:result.xml --require tests/specs/features/step_definitions/stepdefs.js tests/specs/features/**/*.feature"
   },
   "repository": {
     "type": "git",

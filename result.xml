@@ -10,22 +10,22 @@
     <testcase classname="i-should-be-told-&quot;tgif&quot;" name="I should be told &quot;TGIF&quot;" time="0.000">
     </testcase>
   </testsuite>
-  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0.003">
+  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0">
     <properties>
     </properties>
-    <testcase classname="today-is-&quot;sunday&quot;" name="today is &quot;Sunday&quot;" time="0.001">
+    <testcase classname="today-is-&quot;sunday&quot;" name="today is &quot;Sunday&quot;" time="0.000">
     </testcase>
-    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.001">
+    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.000">
     </testcase>
-    <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.001">
+    <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.000">
     </testcase>
   </testsuite>
-  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0">
+  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0.001">
     <properties>
     </properties>
     <testcase classname="today-is-&quot;anything-else!&quot;" name="today is &quot;anything else!&quot;" time="0.000">
     </testcase>
-    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.000">
+    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.001">
     </testcase>
     <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.000">
     </testcase>
@@ -60,22 +60,22 @@
     <testcase classname="i-should-be-told-&quot;tgif&quot;" name="I should be told &quot;TGIF&quot;" time="0.000">
     </testcase>
   </testsuite>
-  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0.003">
+  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0">
     <properties>
     </properties>
-    <testcase classname="today-is-&quot;sunday&quot;" name="today is &quot;Sunday&quot;" time="0.001">
+    <testcase classname="today-is-&quot;sunday&quot;" name="today is &quot;Sunday&quot;" time="0.000">
     </testcase>
-    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.001">
+    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.000">
     </testcase>
-    <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.001">
+    <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.000">
     </testcase>
   </testsuite>
-  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0">
+  <testsuite name="is-it-friday-yet?;today-is-or-is-not-friday" tests="3" failures="0" skipped="0" errors="0" time="0.001">
     <properties>
     </properties>
     <testcase classname="today-is-&quot;anything-else!&quot;" name="today is &quot;anything else!&quot;" time="0.000">
     </testcase>
-    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.000">
+    <testcase classname="i-ask-whether-it&apos;s-friday-yet" name="I ask whether it&apos;s Friday yet" time="0.001">
     </testcase>
     <testcase classname="i-should-be-told-&quot;nope&quot;" name="I should be told &quot;Nope&quot;" time="0.000">
     </testcase>
