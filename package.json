@@ -20,7 +20,6 @@
     "assertion-error-formatter": "^3.0.0",
     "cli-color": "~2.0.0",
     "cucumber": "~6.0.5",
-    "cucumber-junit-formatter": "~0.2.2",
     "xml": "~1.0.1"
   },
   "devDependencies": {
